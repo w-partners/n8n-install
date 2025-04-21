@@ -1,0 +1,30 @@
+name: Validate and Prepare n8n Installer
+
+on:
+  push:
+    paths:
+      - 'setup-n8n-env.sh'
+      - '.github/workflows/**'
+  pull_request:
+    paths:
+      - 'setup-n8n-env.sh'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check Shell Syntax
+        run: |
+          bash -n setup-n8n-env.sh
+
+      - name: Confirm Token Placeholder
+        run: |
+          if grep -q "CLOUDFLARE_API_TOKEN" setup-n8n-env.sh; then
+            echo "✅ Token placeholder found."
+          else
+            echo "❌ CLOUDFLARE_API_TOKEN not found."
+            exit 1
+          fi
