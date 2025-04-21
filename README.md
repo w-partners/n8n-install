@@ -15,3 +15,36 @@ export CLOUDFLARE_API_TOKEN=여러분의_Cloudflare_API_토큰
 curl -O https://raw.githubusercontent.com/w-partners/n8n-install/refs/heads/main/setup-n8n-env.sh
 chmod +x setup-n8n-env.sh
 sudo ./setup-n8n-env.sh
+```
+
+---
+
+## 📦 설치 구성 요소
+
+- [x] **Docker** 및 Docker Network 구성
+- [x] **Node.js 18** 버전 설치
+- [x] **n8n** Docker 컨테이너 실행
+- [x] **Nginx** Reverse Proxy (포트 80 → 5678)
+- [x] **ddclient** (Cloudflare API 연동으로 DDNS 자동 IP 갱신)
+
+---
+
+## 🌐 도메인 구성 예시
+
+- `w.w-partners.org` ← `n8n`이 접근되는 주소
+- Cloudflare 계정에서 서브도메인 생성 후 사용
+
+---
+
+## 🔐 보안
+
+- API 토큰은 `.sh` 내에 저장되지 않습니다
+- 실행 시 `환경변수`로만 전달됨
+- GitHub 퍼블릭 저장소로도 안전하게 사용 가능
+
+---
+
+## 🧑‍💻 만든이
+
+- **w-partners** 기술 자동화 프로젝트
+- 문의: [n8n@w-partners.org](mailto:n8n@w-partners.org)
