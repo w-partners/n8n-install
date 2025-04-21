@@ -47,4 +47,4 @@ sudo ./setup-n8n-env.sh
 ## 🧑‍💻 만든이
 
 - **w-partners** 기술 자동화 프로젝트
-- 문의: [n8n@w-partners.org](mailto:n8n@w-partners.org)
+- 문의: [whitegun.suh@gmail.com](mailto:whitegun.suh@gmail.com)
